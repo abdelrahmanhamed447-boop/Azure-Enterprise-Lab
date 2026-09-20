@@ -1,128 +1,275 @@
 # Azure Enterprise Network Lab
 
-A hands-on **Microsoft Azure networking lab** designed to demonstrate practical experience in **enterprise cloud networking, infrastructure deployment, network security, load balancing, and VPN connectivity**.
+## 📌 Overview
+
+A hands-on **Azure Enterprise Network Lab** demonstrating the configuration of an enterprise-style Azure network infrastructure using Azure Virtual Network, subnets, Network Security Groups, Windows Server virtual machines, IIS web servers, Azure Load Balancer, Public IP, and Azure VPN Gateway.
+
+The lab includes practical configuration and validation of network connectivity, web server availability, load balancing, and VPN connectivity.
 
 ---
 
 ## 📑 Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Architecture](#-architecture)
-- [Key Components](#-key-components)
-- [Skills Demonstrated](#-skills-demonstrated)
-- [Documentation](#-documentation)
-- [Technologies](#-technologies)
+- [📌 Overview](#-overview)
+- [📑 Table of Contents](#-table-of-contents)
+- [🎯 Lab Objectives](#-lab-objectives)
+- [🏗️ Lab Environment](#️-lab-environment)
+- [🛠️ Technologies & Services](#️-technologies--services)
+- [🔄 Lab Workflow](#-lab-workflow)
+  - [1️⃣ Virtual Network & Subnets](#1️⃣-virtual-network--subnets)
+  - [2️⃣ Network Security Group](#2️⃣-network-security-group)
+  - [3️⃣ Public IP Configuration](#3️⃣-public-ip-configuration)
+  - [4️⃣ Windows Server Virtual Machines](#4️⃣-windows-server-virtual-machines)
+  - [5️⃣ IIS Web Servers](#5️⃣-iis-web-servers)
+  - [6️⃣ Azure Load Balancer](#6️⃣-azure-load-balancer)
+  - [7️⃣ Load Balancer Health Probe](#7️⃣-load-balancer-health-probe)
+  - [8️⃣ Load Balancing Rule](#8️⃣-load-balancing-rule)
+  - [9️⃣ Azure VPN Gateway](#9️⃣-azure-vpn-gateway)
+  - [🔟 VPN Connectivity Validation](#-vpn-connectivity-validation)
+- [📊 Validation & Testing](#-validation--testing)
+- [🧠 Skills Demonstrated](#-skills-demonstrated)
+- [📸 Evidence & Documentation](#-evidence--documentation)
+- [📁 Project Structure](#-project-structure)
+- [⭐ Project Summary](#-project-summary)
 
 ---
 
-## 📌 Project Overview
+## 🎯 Lab Objectives
 
-This project implements an **enterprise-style network infrastructure in Microsoft Azure** using Azure Virtual Network, multiple subnets, Network Security Groups, Windows Server virtual machines, Azure Load Balancer, Virtual Machine Scale Set, and VPN Gateway.
+The main objectives of this lab were to:
 
-The lab focuses on building and testing a **secure and scalable Azure network environment**.
+- Configure an Azure Virtual Network.
+- Create and configure multiple subnets.
+- Configure Network Security Group rules.
+- Configure a Public IP address.
+- Deploy Windows Server virtual machines.
+- Configure IIS web servers.
+- Configure Azure Load Balancer.
+- Configure a frontend IP configuration.
+- Configure a backend pool.
+- Configure a health probe.
+- Configure a load balancing rule.
+- Configure Azure VPN Gateway.
+- Establish and validate VPN connectivity.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Lab Environment
 
-The lab includes:
+The lab environment includes:
 
-- ☁️ Azure Resource Group
-- 🌐 Azure Virtual Network (VNet)
-- 🔹 Multiple Subnets
-- 🛡️ Network Security Groups (NSG)
-- 🖥️ Windows Server Virtual Machines
-- 📈 Virtual Machine Scale Set (VMSS)
+- ☁️ Microsoft Azure
+- 🌐 Azure Virtual Network
+- 🧩 Azure Subnets
+- 🛡️ Network Security Group
+- 🌍 Public IP
+- 💻 Windows Server Virtual Machines
+- 🌐 IIS Web Servers
 - ⚖️ Azure Load Balancer
+- 🔍 Load Balancer Health Probe
+- 🔗 Load Balancing Rule
 - 🔐 Azure VPN Gateway
-- 🔑 Point-to-Site (P2S) VPN
-- 🌐 IIS Web Server
 
 ---
 
-## 🧩 Key Components
+## 🛠️ Technologies & Services
 
-### 🌐 Azure Virtual Network
-
-Created an **Azure Virtual Network with multiple subnets** to provide network segmentation and connectivity between Azure resources.
-
-### 🛡️ Network Security Groups
-
-Configured NSG inbound rules to control access to the deployed resources, including:
-
-- RDP
-- HTTP
-- Load Balancer traffic
-
-### 🖥️ Windows Server Virtual Machines
-
-Deployed **Windows Server virtual machines** with private and public IP addressing.
-
-Configured **IIS Web Server** to provide a web service for testing load balancing and connectivity.
-
-### ⚖️ Azure Load Balancer
-
-Configured an **Azure Load Balancer** with:
-
-- Backend Pool
-- HTTP Health Probe
-- Load-Balancing Rule
-
-The Load Balancer distributes incoming **HTTP traffic across backend resources**.
-
-### 📈 Virtual Machine Scale Set
-
-Configured a **Virtual Machine Scale Set (VMSS)** to provide scalable compute resources within the Azure environment.
-
-### 🔐 VPN Gateway
-
-Configured **Azure VPN Gateway** with **Point-to-Site (P2S) VPN connectivity** to provide secure remote access to the Azure virtual network.
+| Technology | Purpose |
+|---|---|
+| **Azure Virtual Network** | Enterprise network infrastructure |
+| **Azure Subnets** | Network segmentation |
+| **Network Security Group** | Network traffic control |
+| **Public IP** | Public connectivity |
+| **Windows Server VMs** | Application/web server infrastructure |
+| **IIS** | Web server hosting |
+| **Azure Load Balancer** | Load distribution between web servers |
+| **Health Probe** | Backend server health monitoring |
+| **Load Balancing Rule** | Traffic distribution configuration |
+| **Azure VPN Gateway** | VPN connectivity |
 
 ---
 
-## 🧠 Skills Demonstrated
+# 🔄 Lab Workflow
 
-- Azure Virtual Network Design
-- Subnetting and Network Segmentation
-- Network Security Groups
-- Azure Load Balancing
-- VM and VMSS Deployment
-- Windows Server Administration
-- IIS Configuration
-- VPN Gateway Configuration
-- Point-to-Site VPN
-- Azure Network Troubleshooting
-- Cloud Networking
+## 1️⃣ Virtual Network & Subnets
+
+Configured an Azure Virtual Network for the enterprise lab environment.
+
+Multiple subnets were created within the virtual network to provide network segmentation for the deployed resources.
 
 ---
 
-## 📄 Documentation
+## 2️⃣ Network Security Group
 
-Detailed project documentation, configuration steps, and implementation screenshots are available in the project PDF.
+Configured a Network Security Group and inbound security rules to control network traffic to the environment.
 
-**[📥 View / Download Azure Enterprise Lab Documentation](https://github.com/abdelrahmanhamed447-boop/Azure-Enterprise-Lab/raw/refs/heads/main/Azure_Enterprise_Lab_GitHub_Ordered.pdf)**
+The documentation includes the configured inbound security rules and their associated ports, protocols, sources, destinations, and actions.
 
 ---
 
-## 🛠️ Technologies
+## 3️⃣ Public IP Configuration
 
-- Microsoft Azure
-- Azure Virtual Network
-- Azure Load Balancer
+Configured an Azure Public IP address for public connectivity to Azure resources.
+
+The Public IP configuration was associated with the Azure networking environment.
+
+---
+
+## 4️⃣ Windows Server Virtual Machines
+
+Deployed Windows Server virtual machines within the Azure Virtual Network.
+
+The lab includes two web server virtual machines:
+
+- **WEB01**
+- **WEB02**
+
+The VM networking configuration was connected to the Azure Virtual Network and associated subnet.
+
+---
+
+## 5️⃣ IIS Web Servers
+
+Configured IIS on the Windows Server virtual machines.
+
+The documentation demonstrates the IIS web server running on:
+
+- **WEB01**
+- **WEB02**
+
+This provides the web server endpoints used for the Load Balancer configuration.
+
+---
+
+## 6️⃣ Azure Load Balancer
+
+Configured an Azure Load Balancer to distribute incoming traffic across the backend web servers.
+
+The Load Balancer configuration includes:
+
+- Frontend IP configuration
+- Backend pool
+- Health probe
+- Load balancing rule
+
+---
+
+## 7️⃣ Load Balancer Health Probe
+
+Configured a health probe to monitor the availability of the backend web servers.
+
+The health probe configuration shown in the documentation uses HTTP traffic on port **80**.
+
+---
+
+## 8️⃣ Load Balancing Rule
+
+Configured a Load Balancing Rule to distribute incoming traffic from the frontend configuration to the backend pool.
+
+The rule is associated with the configured health probe and backend pool.
+
+---
+
+## 9️⃣ Azure VPN Gateway
+
+Configured an Azure VPN Gateway as part of the enterprise networking environment.
+
+The VPN Gateway is associated with the Azure Virtual Network and provides VPN connectivity.
+
+---
+
+## 🔟 VPN Connectivity Validation
+
+Validated the VPN connection using the VPN client.
+
+The final documentation screenshot shows an established VPN connection with the status:
+
+**Securely Connected!**
+
+---
+
+# 📊 Validation & Testing
+
+The lab documentation provides visual evidence of the configured Azure networking environment, including:
+
+- Virtual Network configuration
+- Subnet configuration
+- Network Security Group rules
+- Public IP configuration
+- Windows Server VM configuration
+- IIS web server availability
+- Load Balancer frontend configuration
+- Load Balancer backend pool
+- Health probe configuration
+- Load balancing rule
 - Azure VPN Gateway
-- Virtual Machine Scale Set
+- Successful VPN connectivity
+
+The screenshots provide practical evidence of the configured infrastructure and connectivity. :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2}
+
+---
+
+# 🧠 Skills Demonstrated
+
+### 🌐 Azure Networking
+
+- Azure Virtual Network
+- Subnet Configuration
+- Network Segmentation
 - Network Security Groups
-- Windows Server
+- Public IP Configuration
+
+### 💻 Azure Compute & Web Services
+
+- Windows Server Virtual Machines
+- IIS Web Server
+- Web Server Configuration
+
+### ⚖️ Load Balancing
+
+- Azure Load Balancer
+- Frontend IP Configuration
+- Backend Pools
+- Health Probes
+- Load Balancing Rules
+
+### 🔐 VPN Connectivity
+
+- Azure VPN Gateway
+- VPN Configuration
+- VPN Connectivity Validation
+
+---
+
+# 📸 Evidence & Documentation
+
+The project documentation contains **27 pages of screenshots** covering the Azure networking configuration and validation performed during the lab.
+
+The documentation includes evidence for:
+
+- Azure Virtual Network
+- Subnets
+- Network Security Group
+- Public IP
+- Windows Server VMs
+- WEB01
+- WEB02
 - IIS
+- Azure Load Balancer
+- Frontend IP
+- Backend Pool
+- Health Probe
+- Load Balancing Rule
+- Azure VPN Gateway
+- VPN connectivity
 
 ---
 
-## 🔗 Repository
+# 📁 Project Structure
 
-📂 **[Azure Enterprise Network Lab](https://github.com/abdelrahmanhamed447-boop/Azure-Enterprise-Lab)**
-
-📄 **[Download the Complete Azure Enterprise Lab Documentation](https://github.com/abdelrahmanhamed447-boop/Azure-Enterprise-Lab/raw/refs/heads/main/Azure_Enterprise_Lab_GitHub_Ordered.pdf)**
-
----
-
-⭐ **Feel free to explore the project documentation and implementation details.**
+```text
+Azure-Enterprise-Network-Lab/
+│
+├── README.md
+│
+└── Azure_Enterprise_Lab_GitHub_Ordered.pdf
